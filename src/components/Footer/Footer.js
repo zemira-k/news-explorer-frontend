@@ -5,19 +5,19 @@ function Footer({ link, text, onSignOut, loggedin, email }) {
         © 2021 Supersite, Powered by News API
       </div>
       <div className="footer__nav">
-        <div className="footer__nav__links">
-          <a className="footer__nav__home" href="#home">
+        <div className="footer__nav_links">
+          <a className="footer__nav_home" href="#home">
             Home
           </a>
-          <a className="footer__nav__practicum" href="#home">
+          <a className="footer__nav_practicum" href="#home">
             Practicum by Yandex
           </a>
         </div>
-        <div className="footer__nav__social">
-          <a className="footer__nav__whatsapp" href="#home">
+        <div className="footer__nav_social">
+          <a className="footer__nav_whatsapp" href="#home">
             {""}
           </a>
-          <a className="footer__nav__facebook" href="#home">
+          <a className="footer__nav_facebook" href="#home">
             {""}
           </a>
         </div>

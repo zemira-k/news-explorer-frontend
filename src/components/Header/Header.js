@@ -17,10 +17,12 @@ function Header(props) {
           onLoginClick={props.onLoginClick}
           onLogoutClick={props.onLogoutClick}
           onHomeClick={props.onHomeClick}
+          onMenuClick={props.onMenuClick}
           onSavedArticlesClick={props.onSavedArticlesClick}
           loggedin={props.loggedin}
           loggedInSavedNews={props.loggedInSavedNews}
           userName={props.userName}
+          homeActive={props.homeActive}
         />
       </div>
       {props.loggedInSavedNews ? (

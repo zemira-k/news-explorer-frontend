@@ -25,11 +25,24 @@ function Card(props) {
         onClick={handleSaveCardClick}
         className={cardSaveButtonClassName}
       ></button>
+      {loggedin && loggedInSavedNews ? (
+        <span className="card__note">Remove from saved</span>
+      ) : loggedin ? (
+        ""
+      ) : (
+        <span className="card__note">Sign in to save articles</span>
+      )}
       <img className="card__image" src={props.card.image} alt="image1" />
+      {loggedInSavedNews ? (
+        <span className="card__image_title">Yellowstone</span>
+      ) : (
+        ""
+      )}
+
       <div className="card__description">
-        <p className="card__date">{props.card.date}</p>
+        <time className="card__date">{props.card.date}</time>
         <h3 className="card__title">{props.card.title}</h3>
-        <h4 className="card__subtitle">{props.card.subtitle}</h4>
+        <p className="card__subtitle">{props.card.subtitle}</p>
         <p className="card__name">{props.card.name}</p>
       </div>
     </article>

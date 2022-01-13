@@ -50,8 +50,8 @@
   }
 }
 
-.about__description__title {
-  font-family: Roboto-slab;
+.about__description_title {
+  font-family: Roboto-slab, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 40px;
@@ -60,7 +60,7 @@
 }
 
 @media screen and (max-width: 950px) {
-  .about__description__title {
+  .about__description_title {
     font-size: 30px;
     line-height: 40px;
     margin: 40px 0 0;
@@ -68,13 +68,13 @@
 }
 
 @media screen and (max-width: 500px) {
-  .about__description__title {
+  .about__description_title {
     margin: 0 auto;
   }
 }
 
-.about__description__subtitle {
-  font-family: Roboto;
+.about__description_subtitle {
+  font-family: Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -84,13 +84,13 @@
 }
 
 @media screen and (max-width: 950px) {
-  .about__description__subtitle {
+  .about__description_subtitle {
     margin-top: 16px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .about__description__subtitle {
+  .about__description_subtitle {
     margin: 16px auto 0 16px;
     width: 100%;
   }

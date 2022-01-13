@@ -25,7 +25,7 @@
 }
 
 .footer__copyrights {
-  font-family: Roboto;
+  font-family: Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -63,23 +63,23 @@
   }
 }
 
-.footer__nav__links {
+.footer__nav_links {
   display: flex;
   justify-content: space-evenly;
   width: 60%;
 }
 
 @media screen and (max-width: 750px) {
-  .footer__nav__links {
+  .footer__nav_links {
     flex-direction: column;
   }
 }
 
-.footer__nav__home,
-.footer__nav__practicum {
+.footer__nav_home,
+.footer__nav_practicum {
   text-decoration: none;
   color: black;
-  font-family: Roboto;
+  font-family: Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -87,19 +87,19 @@
 }
 
 @media screen and (max-width: 750px) {
-  .footer__nav__home,
-  .footer__nav__practicum {
+  .footer__nav_home,
+  .footer__nav_practicum {
     margin-bottom: 38px;
   }
 }
 
-.footer__nav__social {
+.footer__nav_social {
   display: flex;
   justify-content: space-evenly;
   width: 40%;
 }
 
-.footer__nav__whatsapp {
+.footer__nav_whatsapp {
   background-image: url("../../images/whatsapp.svg");
   background-size: 20px;
   width: 20px;
@@ -107,7 +107,7 @@
   background-repeat: no-repeat;
 }
 
-.footer__nav__facebook {
+.footer__nav_facebook {
   background-image: url("../../images/facebook.svg");
   background-size: 20px;
   width: 20px;

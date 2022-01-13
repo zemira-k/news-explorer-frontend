@@ -1,8 +1,9 @@
 .card {
   float: left;
-  width: 100%;
   background-color: #fff;
   position: relative;
+  height: fit-content;
+  border-radius: 10px 10px 0 0;
 }
 
 .card__save {
@@ -21,8 +22,19 @@
   border-radius: 8px;
 }
 
+@media screen and (max-width: 950px) {
+  .card__save {
+    top: 8px;
+    right: 8px;
+  }
+}
+
 .card__save:hover {
   background-image: url("../../images/save-hover.svg");
+}
+
+.card__save:hover + .card__note {
+  display: block;
 }
 
 .card__save_type_saved {
@@ -40,8 +52,37 @@
 }
 
 .card__save_type_delete:hover {
-  background-image: url("../../images/trash.svg");
-  opacity: 0.8;
+  background-image: url("../../images/trashBlack.svg");
+}
+
+.card__save_type_delete:hover + .card__note {
+  display: block;
+}
+
+.card__note {
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #fff;
+  padding: 11px 20px;
+  top: 24px;
+  right: 69px;
+  display: none;
+  z-index: 2;
+}
+
+@media screen and (max-width: 950px) {
+  .card__note {
+    top: 8px;
+  }
 }
 
 .card__image {
@@ -49,6 +90,7 @@
   height: 272px;
   border-radius: 10px 10px 0 0;
   object-position: center;
+  object-fit: cover;
 }
 
 @media screen and (max-width: 950px) {
@@ -60,6 +102,32 @@
 @media screen and (max-width: 500px) {
   .card__image {
     height: 196px;
+  }
+}
+
+.card__image_title {
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #000000;
+  border-radius: 10px;
+  position: absolute;
+  background-color: #fff;
+  padding: 8px 22px;
+  top: 24px;
+  left: 24px;
+}
+
+@media screen and (max-width: 950px) {
+  .card__image_title {
+    padding: 8px 20px;
+    top: 8px;
+    left: 8px;
   }
 }
 
@@ -78,7 +146,7 @@
 }
 
 .card__date {
-  font-family: Source Sans Pro;
+  font-family: Source Sans Pro, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -95,7 +163,7 @@
 }
 
 .card__title {
-  font-family: Roboto-slab;
+  font-family: Roboto-slab, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 26px;
@@ -123,7 +191,7 @@
 .card__subtitle {
   margin: 0;
   height: 110px;
-  font-family: Roboto;
+  font-family: Roboto, Arial, sans-serif;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
@@ -155,7 +223,7 @@
 }
 
 .card__name {
-  font-family: Roboto-slab;
+  font-family: Roboto-slab, Arial, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 16px;

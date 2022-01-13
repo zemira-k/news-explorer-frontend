@@ -7,6 +7,7 @@ import Login from "../Login/Login";
 import Register from "../Register/Register";
 import InfoTooltip from "../InfoTooltip/InfoTooltip";
 import cardList from "../../utils/consts";
+import MenuPopup from "../MenuPopup/MenuPopup";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
@@ -16,9 +17,11 @@ function App() {
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState(false);
+  const [isMenuPopupOpen, setIsMenuPopupOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [cards, setCards] = useState([]);
   const [savedNews, setSavedNews] = useState([]);
+  const [homeActive, setHomeActive] = useState(true);
 
   function handleSubmitLogin() {
     setLoggedIn(true);
@@ -30,11 +33,15 @@ function App() {
   function handleSavedArticlesClick() {
     setSearchOpen(false);
     setLoggedInSavedNews(true);
+    setHomeActive(false);
+    closeAllPopups();
   }
 
   function handleHomeClick() {
     setLoggedInSavedNews(false);
     setSearchOpen(false);
+    setHomeActive(true);
+    closeAllPopups();
   }
 
   function handleSearchClick() {
@@ -63,6 +70,8 @@ function App() {
     setLoggedIn(false);
     setLoggedInSavedNews(false);
     setSearchOpen(false);
+    setHomeActive(true);
+    closeAllPopups();
   }
 
   function handleRegisterClick() {
@@ -75,10 +84,16 @@ function App() {
     setIsInfoTooltipPopupOpen(true);
   }
 
+  function handleMenuClick() {
+    closeAllPopups();
+    setIsMenuPopupOpen(true);
+  }
+
   function closeAllPopups() {
     setIsLoginPopupOpen(false);
     setIsRegisterPopupOpen(false);
     setIsInfoTooltipPopupOpen(false);
+    setIsMenuPopupOpen(false);
   }
 
   React.useEffect(() => {
@@ -117,6 +132,8 @@ function App() {
           onHomeClick={handleHomeClick}
           onSavedArticlesClick={handleSavedArticlesClick}
           onSearchClick={handleSearchClick}
+          onMenuClick={handleMenuClick}
+          homeActive={homeActive}
           loggedin={loggedIn}
           userName={userName}
           loggedInSavedNews={loggedInSavedNews}
@@ -152,6 +169,18 @@ function App() {
           isOpen={isInfoTooltipPopupOpen}
           onClose={closeAllPopups}
           onLoginClick={handleLoginClick}
+        />
+        <MenuPopup
+          onOverlayClick={closeByOverlayClick}
+          onSavedArticlesClick={handleSavedArticlesClick}
+          onModalClick={onModalClick}
+          isOpen={isMenuPopupOpen}
+          onClose={closeAllPopups}
+          onHomeClick={handleHomeClick}
+          onLoginClick={handleLoginClick}
+          loggedin={loggedIn}
+          userName={userName}
+          onLogoutClick={handleLogoutClick}
         />
       </CurrentUserContext.Provider>
     </div>

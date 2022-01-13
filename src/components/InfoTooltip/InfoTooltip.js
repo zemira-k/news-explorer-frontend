@@ -6,7 +6,7 @@ function InfoTooltip(props) {
       className={`popup popup_type_info ${props.isOpen ? "popup__opened" : ""}`}
       onClick={props.onOverlayClick}
     >
-      <div className="popup__InfoTooltip" onClick={props.onModalClick}>
+      <div className="popup__info-tool-tip" onClick={props.onModalClick}>
         <button
           onClick={props.onClose}
           aria-label="popup__close"
