@@ -1,0 +1,116 @@
+.footer {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  padding-left: 7%;
+  padding-right: 7%;
+}
+
+@media screen and (max-width: 950px) {
+  .footer {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .footer {
+    display: flex;
+    flex-direction: column-reverse;
+    height: unset;
+    margin-top: 60px;
+  }
+}
+
+.footer__copyrights {
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 22px;
+  color: #b6bcbf;
+}
+
+@media screen and (max-width: 750px) {
+  .footer__copyrights {
+    margin-bottom: 22px;
+  }
+}
+
+.footer__nav {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}
+
+@media screen and (max-width: 1300px) {
+  .footer__nav {
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 950px) {
+  .footer__nav {
+    width: 55%;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .footer__nav {
+    width: 100%;
+  }
+}
+
+.footer__nav_links {
+  display: flex;
+  justify-content: space-evenly;
+  width: 60%;
+}
+
+@media screen and (max-width: 750px) {
+  .footer__nav_links {
+    flex-direction: column;
+  }
+}
+
+.footer__nav_home,
+.footer__nav_practicum {
+  text-decoration: none;
+  color: black;
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 750px) {
+  .footer__nav_home,
+  .footer__nav_practicum {
+    margin-bottom: 38px;
+  }
+}
+
+.footer__nav_social {
+  display: flex;
+  justify-content: space-evenly;
+  width: 40%;
+}
+
+.footer__nav_whatsapp {
+  background-image: url("../../images/whatsapp.svg");
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}
+
+.footer__nav_facebook {
+  background-image: url("../../images/facebook.svg");
+  background-size: 20px;
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+}

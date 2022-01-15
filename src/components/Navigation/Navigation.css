@@ -1,0 +1,158 @@
+.header__nav {
+  margin-right: 7%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 33%;
+}
+
+@media screen and (max-width: 1100px) {
+  .header__nav {
+    margin-right: 5%;
+    width: 50%;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .header__nav {
+    margin-right: 5%;
+    width: 60%;
+  }
+}
+
+.header__nav_link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  margin: 0 0 0 5%;
+}
+
+@media screen and (max-width: 950px) {
+  .header__nav_link {
+    margin: 0 0 0 2%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .header__nav_link {
+    display: none;
+  }
+}
+
+.header__nav_link:hover {
+  opacity: 0.8;
+}
+
+.header__nav_link_type_black {
+  color: black;
+}
+
+.header__nav_link_type_black:hover {
+  opacity: 0.8;
+}
+
+.header__nav_link:last-of-type {
+  margin-right: 4%;
+}
+
+@media screen and (max-width: 950px) {
+  .header__nav_link:last-of-type {
+    margin-right: 3%;
+  }
+}
+
+.header__nav_link_type_active {
+  border-bottom: 3px solid white;
+  padding: 23px 0;
+}
+
+@media screen and (max-width: 950px) {
+  .header__nav_link_type_active {
+    padding: 17px 0;
+  }
+}
+
+.header__nav_link_type_active-black {
+  border-bottom: 3px solid black;
+  padding: 23px 0;
+}
+
+@media screen and (max-width: 950px) {
+  .header__nav_link_type_active-black {
+    padding: 17px 0;
+  }
+}
+
+.header__nav_button {
+  width: 30%;
+  height: 48px;
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(196, 196, 196, 0.01);
+  color: #fff;
+  cursor: pointer;
+  font-family: Roboto, Arial, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 500px) {
+  .header__nav_button {
+    visibility: hidden;
+    width: 0;
+  }
+}
+
+.header__nav_button:hover {
+  opacity: 0.8;
+}
+
+.header__nav_button_type_black {
+  color: black;
+  border: 1px solid black;
+}
+
+.header__nav_button_type_black:hover {
+  opacity: 0.8;
+}
+
+.icon {
+  background-image: url("../../images/logOut.svg");
+  width: 17.5px;
+  height: 16px;
+  margin-left: 19px;
+}
+
+.icon_type_black {
+  background-image: url("../../images/logOutBlack.svg");
+}
+
+.header__nav_menu {
+  background-image: url("../../images/menu.svg");
+  display: none;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+  border-style: none;
+  color: #fff;
+}
+
+@media screen and (max-width: 500px) {
+  .header__nav_menu {
+    display: block;
+  }
+}
+
+.header__nav_menu_type_black {
+  background-image: url("../../images/menuBlack.svg");
+}
