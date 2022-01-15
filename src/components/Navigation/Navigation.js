@@ -3,14 +3,14 @@ function Navigation(props) {
     <nav className="header__nav">
       <button
         onClick={props.onMenuClick}
-        className={`header__nav_menu ${
-          props.loggedInSavedNews ? "header__nav_menu_type_black" : ""
+        className={`header__menu ${
+          props.loggedInSavedNews ? "header__menu_type_black" : ""
         }`}
       />
       <a
-        className={`header__nav_link ${
-          props.homeActive ? "header__nav_link_type_active" : ""
-        } ${props.loggedInSavedNews ? "header__nav_link_type_black" : ""}`}
+        className={`header__link ${
+          props.homeActive ? "header__link_type_active" : ""
+        } ${props.loggedInSavedNews ? "header__link_type_black" : ""}`}
         href="#home"
         onClick={props.onHomeClick}
       >
@@ -18,9 +18,9 @@ function Navigation(props) {
       </a>
       {props.loggedin && (
         <a
-          className={`header__nav_link ${
-            props.homeActive ? "" : "header__nav_link_type_active-black"
-          } ${props.loggedInSavedNews ? "header__nav_link_type_black" : ""}`}
+          className={`header__link ${
+            props.homeActive ? "" : "header__link_type_active-black"
+          } ${props.loggedInSavedNews ? "header__link_type_black" : ""}`}
           href="#Saved articles"
           onClick={props.onSavedArticlesClick}
         >
@@ -29,8 +29,8 @@ function Navigation(props) {
       )}
       <button
         type="submit"
-        className={`header__nav_button ${
-          props.loggedInSavedNews ? "header__nav_button_type_black" : ""
+        className={`header__button ${
+          props.loggedInSavedNews ? "header__button_type_black" : ""
         }`}
         onClick={props.loggedin ? props.onLogoutClick : props.onLoginClick}
       >

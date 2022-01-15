@@ -20,7 +20,7 @@
   }
 }
 
-.header__nav_link {
+.header__link {
   color: #ffffff;
   text-decoration: none;
   font-family: Roboto, Arial, sans-serif;
@@ -32,62 +32,62 @@
 }
 
 @media screen and (max-width: 950px) {
-  .header__nav_link {
+  .header__link {
     margin: 0 0 0 2%;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .header__nav_link {
+  .header__link {
     display: none;
   }
 }
 
-.header__nav_link:hover {
+.header__link:hover {
   opacity: 0.8;
 }
 
-.header__nav_link_type_black {
+.header__link_type_black {
   color: black;
 }
 
-.header__nav_link_type_black:hover {
+.header__link_type_black:hover {
   opacity: 0.8;
 }
 
-.header__nav_link:last-of-type {
+.header__link:last-of-type {
   margin-right: 4%;
 }
 
 @media screen and (max-width: 950px) {
-  .header__nav_link:last-of-type {
+  .header__link:last-of-type {
     margin-right: 3%;
   }
 }
 
-.header__nav_link_type_active {
+.header__link_type_active {
   border-bottom: 3px solid white;
   padding: 23px 0;
 }
 
 @media screen and (max-width: 950px) {
-  .header__nav_link_type_active {
+  .header__link_type_active {
     padding: 17px 0;
   }
 }
 
-.header__nav_link_type_active-black {
+.header__link_type_active-black {
   border-bottom: 3px solid black;
   padding: 23px 0;
 }
 
 @media screen and (max-width: 950px) {
-  .header__nav_link_type_active-black {
+  .header__link_type_active-black {
     padding: 17px 0;
   }
 }
 
-.header__nav_button {
+.header__button {
   width: 30%;
   height: 48px;
   border: 1px solid #ffffff;
@@ -107,22 +107,22 @@
 }
 
 @media screen and (max-width: 500px) {
-  .header__nav_button {
+  .header__button {
     visibility: hidden;
     width: 0;
   }
 }
 
-.header__nav_button:hover {
+.header__button:hover {
   opacity: 0.8;
 }
 
-.header__nav_button_type_black {
+.header__button_type_black {
   color: black;
   border: 1px solid black;
 }
 
-.header__nav_button_type_black:hover {
+.header__button_type_black:hover {
   opacity: 0.8;
 }
 
@@ -137,7 +137,7 @@
   background-image: url("../../images/logOutBlack.svg");
 }
 
-.header__nav_menu {
+.header__menu {
   background-image: url("../../images/menu.svg");
   display: none;
   width: 24px;
@@ -148,11 +148,11 @@
 }
 
 @media screen and (max-width: 500px) {
-  .header__nav_menu {
+  .header__menu {
     display: block;
   }
 }
 
-.header__nav_menu_type_black {
+.header__menu_type_black {
   background-image: url("../../images/menuBlack.svg");
 }
