@@ -146,7 +146,11 @@ function App() {
           searchOpen={searchOpen}
           cards={cards}
         />
-        <Footer />
+        <Footer
+          onHomeClick={handleHomeClick}
+          homeActive={homeActive}
+          loggedInSavedNews={loggedInSavedNews}
+        />
         <Login
           onOverlayClick={closeByOverlayClick}
           onModalClick={onModalClick}
