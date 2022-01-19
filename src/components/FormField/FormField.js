@@ -10,13 +10,19 @@ function FormField(props) {
         value={props.value}
         onChange={props.onChange}
         required
+        minlength={props.minlength || ""}
+        maxlength={props.maxlength || ""}
       />
-      <span
-        className="form__input-error form__input-error_active"
-        id="formName-error"
-      >
-        kkk
-      </span>
+
+      {/* <input className={`input ${errors.email && "is-danger"}`} /> */}
+      {props.error && (
+        <span
+          className="form__input-error form__input-error_active"
+          id="formName-error"
+        >
+          {props.error}
+        </span>
+      )}
     </div>
   );
 }

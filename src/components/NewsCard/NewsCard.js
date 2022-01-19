@@ -1,19 +1,39 @@
 import React from "react";
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
 
 function Card(props) {
-  const currentUser = React.useContext(CurrentUserContext);
-  const isCardSaved = props.card.owner.includes(currentUser.name);
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+
   const loggedin = props.loggedin;
   const loggedInSavedNews = props.loggedInSavedNews;
-
   const cardSaveButtonClassName = `${
     loggedInSavedNews
       ? "card__save card__save_type_delete"
-      : isCardSaved && loggedin
+      : // : props.card.owner && loggedin
+      loggedin && props.card.saved === "true"
       ? "card__save card__save_type_saved"
       : "card__save"
   }`;
+
+  function dateConvert(date) {
+    const myDate = date.split("T")[0];
+    const day = myDate.split("-")[2];
+    const month = months[parseInt(myDate.split("-")[1]) - 1];
+    const year = myDate.split("-")[0];
+    return `${month}  ${day}, ${year}`;
+  }
 
   function handleSaveCardClick() {
     props.onSaveCardClick(props.card);
@@ -32,19 +52,44 @@ function Card(props) {
       ) : (
         <span className="card__note">Sign in to save articles</span>
       )}
-      <img className="card__image" src={props.card.image} alt="image1" />
+      <img
+        className="card__image"
+        src={loggedInSavedNews ? props.card.image : props.card.urlToImage}
+        alt="image1"
+      />
       {loggedInSavedNews ? (
-        <span className="card__image_title">Yellowstone</span>
+        <span className="card__image_title">{props.card.keyword}</span>
       ) : (
         ""
       )}
 
-      <div className="card__description">
-        <time className="card__date">{props.card.date}</time>
-        <h3 className="card__title">{props.card.title}</h3>
-        <p className="card__subtitle">{props.card.subtitle}</p>
-        <p className="card__name">{props.card.name}</p>
-      </div>
+      {loggedInSavedNews ? (
+        <a
+          className="card__description"
+          href={props.card.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <time className="card__date">{dateConvert(props.card.date)}</time>
+          <h3 className="card__title">{props.card.title}</h3>
+          <p className="card__subtitle">{props.card.text}</p>
+          <p className="card__name">{props.card.source}</p>
+        </a>
+      ) : (
+        <a
+          className="card__description"
+          href={props.card.url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <time className="card__date">
+            {dateConvert(props.card.publishedAt)}
+          </time>
+          <h3 className="card__title">{props.card.title}</h3>
+          <p className="card__subtitle">{props.card.description}</p>
+          <p className="card__name">{props.card.source.name}</p>
+        </a>
+      )}
     </article>
   );
 }

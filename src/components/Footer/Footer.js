@@ -1,23 +1,40 @@
-function Footer() {
+import { Link } from "react-router-dom";
+
+function Footer(props) {
   return (
     <footer className="footer">
       <div className="footer__copyrights">
         © 2021 Supersite, Powered by News API
       </div>
       <div className="footer__nav">
-        <nav className="footer__nav_links">
-          <a className="footer__nav_home" href="#home">
+        <nav className="footer__links">
+          <Link to="/" className="footer__home" onClick={props.onHomeClick}>
             Home
-          </a>
-          <a className="footer__nav_practicum" href="#home">
+          </Link>
+          <a
+            className="footer__practicum"
+            href="https://www.google.co.il/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Practicum by Yandex
           </a>
         </nav>
-        <div className="footer__nav_social">
-          <a className="footer__nav_whatsapp" href="#home">
+        <div className="footer__social">
+          <a
+            className="footer__whatsapp"
+            href="https://www.google.co.il/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {""}
           </a>
-          <a className="footer__nav_facebook" href="#home">
+          <a
+            className="footer__facebook"
+            href="https://www.google.co.il/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {""}
           </a>
         </div>
