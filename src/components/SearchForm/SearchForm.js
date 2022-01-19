@@ -14,21 +14,18 @@ function Search(props) {
         Find the latest news on any topic and save them in your personal
         account.
       </h2>
-      <div className="search__container">
+      <form className="search__container" onSubmit={handleSearchClick}>
         <input
           type="text"
           className="search__input"
           placeholder="Enter topic"
           onChange={(e) => setKeyWord(e.target.value)}
+          value={keyWord}
         ></input>
-        <button
-          type="submit"
-          className="search__button"
-          onClick={handleSearchClick}
-        >
+        <button type="submit" className="search__button">
           search
         </button>
-      </div>
+      </form>
     </div>
   );
 }

@@ -20,6 +20,9 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [loggedIn, setLoggedIn] = useState(false);
   const [loggedInSavedNews, setLoggedInSavedNews] = useState(false);
+  const [savedNews, setSavedNews] = useState(
+    JSON.parse(localStorage.getItem("savedNews") || "[]"),
+  );
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState(false);
@@ -28,7 +31,6 @@ function App() {
   const [preloadOpen, setPreloadOpen] = useState(false);
   const [nothingFoundOpen, setNothingFoundOpen] = useState(false);
   const [cards, setCards] = useState([]);
-  const [savedNews, setSavedNews] = useState([]);
   const [messege, setMessege] = useState(false);
   const [homeActive, setHomeActive] = useState(true);
   const [keyWord, setKeyWord] = useState("");
@@ -41,16 +43,15 @@ function App() {
         .then((res) => {
           setLoggedIn(true);
           setCurrentUser(res.data);
-          history.push("/");
+          localStorage.setItem("savedNews", JSON.stringify(savedNews));
         })
         .catch((err) => console.log(err));
     } else {
       setLoggedIn(false);
     }
-  }, [token, history]);
+  }, [token, history, savedNews, currentUser._id]);
 
   function handleSavedArticlesClick() {
-    // setSearchOpen(false);
     setLoggedInSavedNews(true);
     setHomeActive(false);
     closeAllPopups();
@@ -103,7 +104,6 @@ function App() {
 
   function handleSaveCardClick(card) {
     if (loggedIn) {
-      console.log(card.saved);
       if (card.owner === currentUser._id || card.saved === "true") {
         if (card.saved === "true") {
           const found = savedNews.find((c) => c.title === card.title);

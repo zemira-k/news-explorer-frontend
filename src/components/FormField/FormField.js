@@ -10,8 +10,9 @@ function FormField(props) {
         value={props.value}
         onChange={props.onChange}
         required
-        minlength={props.minlength || ""}
-        maxlength={props.maxlength || ""}
+        minLength={props.minlength || ""}
+        maxLength={props.maxlength || ""}
+        autoComplete=""
       />
 
       {/* <input className={`input ${errors.email && "is-danger"}`} /> */}

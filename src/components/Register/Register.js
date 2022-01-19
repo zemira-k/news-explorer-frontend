@@ -1,7 +1,7 @@
 // import React, { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import FormField from "../FormField/FormField";
-import { useFormWithValidation } from "../FormValidation/FormValidation";
+import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 
 function Register(props) {
   const { values, handleChange, errors, isValid, resetForm } =
@@ -42,7 +42,7 @@ function Register(props) {
           value={values.password || ""}
           onChange={(e) => handleChange(e)}
           error={errors.password}
-          minlength="3"
+          minLength="3"
         ></FormField>
         <FormField
           label="Username"
@@ -51,8 +51,8 @@ function Register(props) {
           value={values.username || ""}
           onChange={(e) => handleChange(e)}
           error={errors.username}
-          minlength="2"
-          maxlength="30"
+          minLength="2"
+          maxLength="30"
         ></FormField>
         {props.emailConflict && (
           <span
