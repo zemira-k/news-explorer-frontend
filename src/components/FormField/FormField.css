@@ -47,7 +47,7 @@
 
 .form__input-error_type_center {
   text-align: center;
-  margin: -15px auto 0;
+  margin: 0 auto 0;
 }
 
 .form__input-error_active {

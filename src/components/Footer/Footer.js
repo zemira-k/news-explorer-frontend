@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Footer(props) {
   return (
     <footer className="footer">
@@ -6,9 +8,9 @@ function Footer(props) {
       </div>
       <div className="footer__nav">
         <nav className="footer__links">
-          <a className="footer__home" href="#home" onClick={props.onHomeClick}>
+          <Link to="/" className="footer__home" onClick={props.onHomeClick}>
             Home
-          </a>
+          </Link>         
           <a
             className="footer__practicum"
             href="https://www.google.co.il/"

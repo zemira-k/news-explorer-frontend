@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+## Final project - news-explorer - Zemira Kehati
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project Name: news-explorer
 
-## Available Scripts
+### Project description and its functionality:
 
-In the project directory, you can run:
+- main page contains:
 
-### `npm start`
+1. header - logo, nav-bar, search-form.
+2. main - about the author - image and description.
+3. footer - logo, nav-bar, social-links, copyright.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- saved news page contains:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. header - logo, nav-bar, some articles details.
+2. main - saved articles.
+3. footer - logo, nav-bar, social-links, copyright.
 
-### `npm test`
+- functionality:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. clicking on login openes popup form. if you are not a member yet you can choose register link, that will open a register popup.
+2. all forms are validated. if you fill the form correctly - the submit button becomes active. else - validation error appears.
+3. when submitting register form - api request is sent - if somthing is wrong - you see a messege. if everything is ok - you get success messege.
+4. when submitting login form - api request is sent - if everything is ok - you see a diffrent nav-bar options - "saned articles" and exit icon with your name.
+5. you can search for news by search form. insert a key-word, api request is sent - a list of articles is resieved.
+6. preloader appears until you resieve result.
+7. if nothing is found - "nothing found" page is displayd.
+8. on page you see maximum 3 articles. and "show-more" button. clicking it will load 3 more articles.
+9. when all articles from list are desplayd - "show-more" button dissapears.
+10. article functionality: save/unsave, open full article in new page.
+11. clicking the "Saved articles" from header-nav-bar opens Saved articles page.
+12. on Saved articles page you can see all saved articles, amount of saved articles and their keywords.
+13. Saved articles page functionality: delete a saved article, open full article in new page.
 
-### `npm run build`
+### Technologies and techniques used:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- BEM metodologi.
+- Popup windows.
+- import and export.
+- Api requests.
+- hooks
+- states
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### In css I used -
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Grid
+- Media queries
+- The pseudo class "hover" for links.
+- Transition for opening and closing forms images etc.
 
-### `npm run eject`
+### In JS I used -
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Function for opening, closing and submiting all the forms.
+- A keyHandler for closing popups by clicking outside the popup or by clicking escape.
+- Several JS classes, and instances for them.
+- Api requests.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## deployed link: kehati10@final.students.nomoreparties.sbs:/home/kehati10/news-explorer-frontend/build"

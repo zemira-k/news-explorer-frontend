@@ -16,7 +16,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "npm run build && scp -r ./build/* kehati10@final.students.nomoreparties.sbs:/home/kehati10/news-explorer-frontend/build"
   },
   "eslintConfig": {
     "extends": [
