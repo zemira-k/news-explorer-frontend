@@ -10,7 +10,7 @@ function Footer(props) {
         <nav className="footer__links">
           <Link to="/" className="footer__home" onClick={props.onHomeClick}>
             Home
-          </Link>
+          </Link>         
           <a
             className="footer__practicum"
             href="https://www.google.co.il/"
