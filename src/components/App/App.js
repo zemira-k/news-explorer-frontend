@@ -20,9 +20,7 @@ function App() {
   const [token, setToken] = useState(localStorage.getItem("jwt"));
   const [loggedIn, setLoggedIn] = useState(false);
   const [loggedInSavedNews, setLoggedInSavedNews] = useState(false);
-  const [savedNews, setSavedNews] = useState(
-    JSON.parse(localStorage.getItem("savedNews") || "[]"),
-  );
+  const [savedNews, setSavedNews] = useState([]);
   const [isLoginPopupOpen, setIsLoginPopupOpen] = useState(false);
   const [isRegisterPopupOpen, setIsRegisterPopupOpen] = useState(false);
   const [isInfoTooltipPopupOpen, setIsInfoTooltipPopupOpen] = useState(false);
@@ -30,7 +28,9 @@ function App() {
   const [searchOpen, setSearchOpen] = useState(false);
   const [preloadOpen, setPreloadOpen] = useState(false);
   const [nothingFoundOpen, setNothingFoundOpen] = useState(false);
-  const [cards, setCards] = useState([]);
+  const [cards, setCards] = useState(
+    JSON.parse(localStorage.getItem("cards") || "[]"),
+  );
   const [messege, setMessege] = useState(false);
   const [homeActive, setHomeActive] = useState(true);
   const [keyWord, setKeyWord] = useState("");
@@ -43,19 +43,23 @@ function App() {
         .then((res) => {
           setLoggedIn(true);
           setCurrentUser(res.data);
-          localStorage.setItem("savedNews", JSON.stringify(savedNews));
         })
         .catch((err) => console.log(err));
     } else {
       setLoggedIn(false);
     }
-  }, [token, history, savedNews, currentUser._id]);
+  }, [token]);
 
   function handleSavedArticlesClick() {
-    setLoggedInSavedNews(true);
-    setHomeActive(false);
-    closeAllPopups();
-    history.push("/saved-news");
+    MainApi.getAllArticles(token)
+      .then((res) => {
+        setSavedNews(res);
+        setLoggedInSavedNews(true);
+        setHomeActive(false);
+        closeAllPopups();
+        history.push("/saved-news");
+      })
+      .catch((err) => console.log(err));
   }
 
   function handleHomeClick() {
@@ -76,6 +80,7 @@ function App() {
           setCards(cards.articles);
           cards.articles.map((obj) => (obj.saved = "false"));
           setSearchOpen(true);
+          localStorage.setItem("cards", JSON.stringify(cards));
         } else {
           setNothingFoundOpen(true);
         }
