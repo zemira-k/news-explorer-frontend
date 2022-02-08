@@ -15,7 +15,6 @@ function FormField(props) {
         autoComplete=""
       />
 
-      {/* <input className={`input ${errors.email && "is-danger"}`} /> */}
       {props.error && (
         <span
           className="form__input-error form__input-error_active"
