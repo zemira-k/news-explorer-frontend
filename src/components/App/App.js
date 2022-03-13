@@ -13,6 +13,7 @@ import * as NewsApi from "../../utils/NewsApi";
 import * as MainApi from "../../utils/MainApi";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SavedNews from "../SavedNews/SavedNews";
+import Game from "../Game";
 
 function App() {
   const history = useHistory();
@@ -251,6 +252,7 @@ function App() {
               preloadOpen={preloadOpen}
               nothingFoundOpen={nothingFoundOpen}
             />
+            <Game></Game>
           </Route>
           <ProtectedRoute
             exact
