@@ -13,7 +13,6 @@ import * as NewsApi from "../../utils/NewsApi";
 import * as MainApi from "../../utils/MainApi";
 import SavedNewsHeader from "../SavedNewsHeader/SavedNewsHeader";
 import SavedNews from "../SavedNews/SavedNews";
-import Game from "../Game";
 
 function App() {
   const history = useHistory();
@@ -36,7 +35,6 @@ function App() {
   const [homeActive, setHomeActive] = useState(true);
   const [keyWord, setKeyWord] = useState("");
   const [emailConflict, setEmailConflict] = useState(false);
-
   // if logged in get user info
   React.useEffect(() => {
     if (token) {
@@ -50,7 +48,6 @@ function App() {
       setLoggedIn(false);
     }
   }, [token]);
-
   function handleSavedArticlesClick() {
     MainApi.getAllArticles(token)
       .then((res) => {
@@ -62,13 +59,11 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
-
   function handleHomeClick() {
     setLoggedInSavedNews(false);
     setHomeActive(true);
     closeAllPopups();
   }
-
   function handleSearchClick(keyWord) {
     setKeyWord(keyWord);
     setPreloadOpen(true);
@@ -107,7 +102,6 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
-
   function handleSaveCardClick(card) {
     if (loggedIn) {
       if (card.owner === currentUser._id || card.saved === "true") {
@@ -133,7 +127,6 @@ function App() {
       setIsLoginPopupOpen(true);
     }
   }
-
   // login, register, logout
   function handleSubmitLogin({ values, resetForm }) {
     MainApi.login(values.email, values.password)
@@ -148,7 +141,6 @@ function App() {
       })
       .catch((err) => console.log(err));
   }
-
   // function handleSubmitRegister({ email, password, name }) {
   function handleSubmitRegister({ values, resetForm }) {
     MainApi.register(values.email, values.password, values.username)
@@ -167,7 +159,6 @@ function App() {
         console.log("Something went wrong.");
       });
   }
-
   function handleLogoutClick() {
     console.log("logged out");
     localStorage.removeItem("jwt");
@@ -178,28 +169,23 @@ function App() {
     setHomeActive(true);
     closeAllPopups();
   }
-
   // open or close popups
   function handleLoginClick() {
     closeAllPopups();
     setIsLoginPopupOpen(true);
   }
-
   function handleRegisterClick() {
     closeAllPopups();
     setIsRegisterPopupOpen(true);
   }
-
   function handleInfo() {
     closeAllPopups();
     setIsInfoTooltipPopupOpen(true);
   }
-
   function handleMenuClick() {
     closeAllPopups();
     setIsMenuPopupOpen(true);
   }
-
   function closeAllPopups() {
     setIsLoginPopupOpen(false);
     setIsRegisterPopupOpen(false);
@@ -207,7 +193,6 @@ function App() {
     setIsMenuPopupOpen(false);
     setMessege(false);
   }
-
   // close popup by esc or overlay click
   React.useEffect(() => {
     const closeByEscape = (e) => {
@@ -218,16 +203,13 @@ function App() {
     document.addEventListener("keydown", closeByEscape);
     return () => document.removeEventListener("keydown", closeByEscape);
   }, []);
-
   const closeByOverlayClick = (e) => {
     closeAllPopups();
     e.stopPropagation();
   };
-
   const onModalClick = (e) => {
     e.stopPropagation();
   };
-
   return (
     <div className="page__container">
       <CurrentUserContext.Provider value={currentUser}>
@@ -252,7 +234,6 @@ function App() {
               preloadOpen={preloadOpen}
               nothingFoundOpen={nothingFoundOpen}
             />
-            <Game></Game>
           </Route>
           <ProtectedRoute
             exact
