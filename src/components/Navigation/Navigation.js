@@ -1,4 +1,9 @@
+import React from "react";
+import { Link } from "react-router-dom";
+import { CurrentUserContext } from "../../contexts/CurrentUserContext";
+
 function Navigation(props) {
+  const currentUser = React.useContext(CurrentUserContext);
   return (
     <nav className="header__nav">
       <button
@@ -7,25 +12,25 @@ function Navigation(props) {
           props.loggedInSavedNews ? "header__menu_type_black" : ""
         }`}
       />
-      <a
+      <Link
+        to="/"
         className={`header__link ${
           props.homeActive ? "header__link_type_active" : ""
         } ${props.loggedInSavedNews ? "header__link_type_black" : ""}`}
-        href="#home"
         onClick={props.onHomeClick}
       >
         Home
-      </a>
+      </Link>
       {props.loggedin && (
-        <a
+        <Link
+          to="/saved-news"
           className={`header__link ${
             props.homeActive ? "" : "header__link_type_active-black"
           } ${props.loggedInSavedNews ? "header__link_type_black" : ""}`}
-          href="#Saved articles"
           onClick={props.onSavedArticlesClick}
         >
           Saved articles
-        </a>
+        </Link>
       )}
       <button
         type="submit"
@@ -34,7 +39,7 @@ function Navigation(props) {
         }`}
         onClick={props.loggedin ? props.onLogoutClick : props.onLoginClick}
       >
-        {props.loggedin ? props.userName : "Sign in"}
+        {props.loggedin ? currentUser.name : "Sign in"}
         {props.loggedin && (
           <span
             className={`icon ${

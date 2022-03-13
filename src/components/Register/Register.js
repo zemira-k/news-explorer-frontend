@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import PopupWithForm from "../PopupWithForm/PopupWithForm";
 import FormField from "../FormField/FormField";
+import { useFormWithValidation } from "../../hooks/useFormWithValidation";
 
 function Register(props) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [username, setUsername] = useState("");
+  const { values, handleChange, errors, isValid, resetForm } =
+    useFormWithValidation();
 
   function handleSubmit(e) {
     e.preventDefault();
-    props.onSubmit();
+    props.onSubmit({ values, resetForm });
   }
 
   return (
@@ -25,34 +25,43 @@ function Register(props) {
         onModalClick={props.onModalClick}
         onLoginClick={props.onLoginClick}
         footer="Sign in"
+        isValid={isValid}
       >
         <FormField
           label="Email"
           name="email"
           placeholder="Enter email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          value={values.email || ""}
+          onChange={(e) => handleChange(e)}
+          error={errors.email}
         ></FormField>
         <FormField
           label="Password"
           name="password"
           placeholder="Enter password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
+          value={values.password || ""}
+          onChange={(e) => handleChange(e)}
+          error={errors.password}
+          minLength="3"
         ></FormField>
         <FormField
           label="Username"
           name="username"
           placeholder="Enter your username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
+          value={values.username || ""}
+          onChange={(e) => handleChange(e)}
+          error={errors.username}
+          minLength="2"
+          maxLength="30"
         ></FormField>
-        <span
-          className="form__input-error form__input-error_type_center form__input-error_active"
-          id="formName-error"
-        >
-          This email is not available
-        </span>
+        {props.emailConflict && (
+          <span
+            className="form__input-error form__input-error_type_center form__input-error_active"
+            id="form-error"
+          >
+            This email is not available
+          </span>
+        )}
       </PopupWithForm>
     </div>
   );

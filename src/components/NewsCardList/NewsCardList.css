@@ -42,20 +42,20 @@
   font-size: 18px;
   line-height: 24px;
   color: #1a1b22;
-  margin: 64px 40% 80px;
+  margin: 0 40% 80px;
   padding: 0;
 }
 
 @media screen and (max-width: 950px) {
   .search-results__button {
-    margin: 32px 35% 40px;
+    margin: 0 35% 40px;
     width: 30%;
   }
 }
 
 @media screen and (max-width: 500px) {
   .search-results__button {
-    margin: 21px 5% 24px;
+    margin: 0 5% 24px;
     width: 90%;
   }
 }
@@ -64,14 +64,20 @@
   background-color: #e8e8e8;
 }
 
+.search-results__button_type_not-active {
+  display: none;
+}
+
 .cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: calc((100% - 32px) / 3) calc((100% - 32px) / 3) calc(
+      (100% - 32px) / 3
+    );
   grid-template-rows: repeat(1, 1fr);
   grid-gap: 16px;
   width: 85%;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 0 64px;
   list-style: none;
 }
 
@@ -79,29 +85,34 @@
   .cards {
     width: 90%;
     grid-gap: 8px;
+    grid-template-columns: calc((100% - 16px) / 3) calc((100% - 16px) / 3) calc(
+        (100% - 16px) / 3
+      );
   }
 }
 
 @media screen and (max-width: 730px) {
   .cards {
-    grid-template-columns: repeat(2, 1fr);
     width: 70%;
     grid-gap: 20px;
+    grid-template-columns: calc((100% - 40px) / 2) calc((100% - 40px) / 2);
+    padding: 0 0 32px;
   }
 }
 
 @media screen and (max-width: 650px) {
   .cards {
-    grid-template-columns: repeat(2, 1fr);
     width: 90%;
     grid-gap: 10px;
+    grid-template-columns: calc((100% - 20px) / 2) calc((100% - 20px) / 2);
   }
 }
 
 @media screen and (max-width: 500px) {
   .cards {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 100%;
     width: 65%;
+    padding: 0 0 21px;
   }
 }
 

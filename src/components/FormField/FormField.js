@@ -10,13 +10,19 @@ function FormField(props) {
         value={props.value}
         onChange={props.onChange}
         required
+        minLength={props.minlength || ""}
+        maxLength={props.maxlength || ""}
+        autoComplete=""
       />
-      <span
-        className="form__input-error form__input-error_active"
-        id="formName-error"
-      >
-        kkk
-      </span>
+
+      {props.error && (
+        <span
+          className="form__input-error form__input-error_active"
+          id="formName-error"
+        >
+          {props.error}
+        </span>
+      )}
     </div>
   );
 }
