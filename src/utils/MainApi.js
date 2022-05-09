@@ -1,4 +1,5 @@
-const BaseUrl = "https://final.students.nomoreparties.sbs";
+// const BaseUrl = "https://final.students.nomoreparties.sbs";
+const BaseUrl = "http://localhost:3000";
 
 export function checkResponse(res) {
   if (res.ok) {

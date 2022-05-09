@@ -90,7 +90,6 @@ function App() {
       });
   }
   function deleteArticle(card) {
-    console.log(card);
     MainApi.deleteArticle(card._id, token)
       .then(() => {
         setSavedNews((state) => state.filter((c) => c._id !== card._id));
