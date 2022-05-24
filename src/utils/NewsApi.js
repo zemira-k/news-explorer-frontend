@@ -6,7 +6,8 @@ const day = last.getDate();
 const month = last.getMonth() + 1;
 const year = last.getFullYear();
 
-const BaseUrl = "https://newsapi.org/v2/everything";
+// const BaseUrl = "https://newsapi.org/v2/everything";
+const BaseUrl = "https://nomoreparties.co/news/v2/everything";
 const from = year + "/" + month + "/" + day;
 const to = date;
 const API_KEY = "f93ae21756d948b5a572572bd9460451";
