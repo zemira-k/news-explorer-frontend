@@ -6,7 +6,6 @@ const day = last.getDate();
 const month = last.getMonth() + 1;
 const year = last.getFullYear();
 
-// const BaseUrl = "https://newsapi.org/v2/everything";
 const BaseUrl = "https://nomoreparties.co/news/v2/everything";
 const from = year + "/" + month + "/" + day;
 const to = date;

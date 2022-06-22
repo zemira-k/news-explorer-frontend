@@ -1,6 +1,4 @@
-// const BaseUrl = "https://final.students.nomoreparties.sbs";
-const BaseUrl = "http://myNews.students.nomoreparties.sbs";
-// const BaseUrl = "http://34.168.6.48";
+const BaseUrl = "https://myNews.students.nomoreparties.sbs";
 // const BaseUrl = "http://localhost:3000";
 
 export function checkResponse(res) {
