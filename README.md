@@ -55,4 +55,4 @@
 - Several JS classes, and instances for them.
 - Api requests.
 
-## deployed link: kehati10@final.students.nomoreparties.sbs:/home/kehati10/news-explorer-frontend/build"
+## deployed link: kehati10@myNews.students.nomoreparties.sbs:/home/kehati10/frontend
