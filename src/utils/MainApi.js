@@ -1,4 +1,4 @@
-const BaseUrl = "https://mynews.students.nomoreparties.sbs";
+const BaseUrl = "https://api.myNews.students.nomoreparties.sbs";
 // const BaseUrl = "http://localhost:3000";
 
 export function checkResponse(res) {
